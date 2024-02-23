@@ -1,0 +1,4 @@
+
+"* 3 (% str))
+                   ^
+SyntaxError: invalid syntaxi This is the command to select just the emails of the students. I put it here so you understand what it does. You can delete this part when you're pasting it in the vim file.
