@@ -2,11 +2,8 @@
 def safe_print_division(a, b):
     try:
         result = a / b
-    except ZeroDivisionError:
-        print("Error: Division by zero")
-        return None
-    except TypeError:
-        print("Error: Both arguments must be integers")
+    except (ZeroDivisionError, TypeError):
+        print(" ")
         return None
     finally:
-        print("Inside result: {}".format(result))
+        print("Inside result:{}".format(result))
