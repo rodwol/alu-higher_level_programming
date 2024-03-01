@@ -2,9 +2,9 @@
 def safe_print_list_integers(my_list=[], x=0):
     try:
         count = 0
-        for item in my_list:
+        for i in my_list:
             try:
-                print("{:d}".format(item), end=" ")
+                print("{:d}".format(i), end=" ")
                 count += 1
                 if count == x:
                     break
@@ -13,5 +13,5 @@ def safe_print_list_integers(my_list=[], x=0):
         print()
         return count
     except TypeError:
-        print("Error: Cannot iterate over provided input.")
+        print(" ")
         return count

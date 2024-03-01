@@ -9,5 +9,5 @@ def safe_print_list(my_list=[], x=0):
         print()
         return count
     except TypeError:
-        print("Error: Cannot iterate over provided input.")
+        print(" ")
         return count
