@@ -6,5 +6,5 @@ def safe_print_division(a, b):
         print(" ")
         return None
     finally:
-        if 'result' in locals():
+        if result is not None:
             print("Inside result:{}".format(result))
