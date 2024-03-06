@@ -1,6 +1,13 @@
 #!/usr/bin/python3
 #define a class square
+"""This module provides functionality related to squares."""
 class Square:
+     """
+    A class representing a square.
+
+    Attributes:
+        __size (int): The size of the square.
+    """
     def __init__(self, size=0):
         #initialize objects of the class
         if not isinstance(size, int):
