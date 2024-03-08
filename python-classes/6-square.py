@@ -10,7 +10,7 @@ class Square:
     Attributes:
         __size (int): The size of the square.
     """
-    def __init__(self, size=0 , position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Initializes a new Square object.
 
@@ -36,14 +36,15 @@ class Square:
         return self.__size ** 2
 
     i = 0
+
     def my_print(self):
         if self.__size == 0:
             print()
-        for j in range(0, self.__position[1]):
+        for j in range(0, self.__position[0]):
             if self.__position[1] > 0:
                 print(" ")
         for i in range(0, self.__size):
-            print("#" * self.__size)
+            print(" " * self.__position[0] + "#" * self.__size)
 
     @property
     def position(self):
@@ -55,5 +56,7 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         for i in value:
             if not isinstance(i, int) or i <= 0:
-                raise TypeError("position must be a tuple of 2 positive integers")
+                raise TypeError(
+                        "position must be a tuple of 2 positive integers"
+                )
         self.__position = value
