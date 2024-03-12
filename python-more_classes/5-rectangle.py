@@ -63,3 +63,6 @@ class Rectangle:
 
     def __print__(self):
         print(str(self))
+
+    def __del__(self):
+        print(f"Bye rectangle...")
