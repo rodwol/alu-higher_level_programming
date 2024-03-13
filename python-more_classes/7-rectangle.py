@@ -11,8 +11,11 @@ class Rectangle:
       __width:width of the rectangle
       __height:height of the rectangle
     """
+    number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
+        Rectangle.number_of_instances += 1
         self.__width = width
         self.__height = height
 
@@ -39,3 +42,32 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        return (self.__width * self.__height)
+
+    def perimeter(self):
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        else:
+            return (2 * (self.__width + self.__height))
+
+    def __str__(self):
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        rect = ""
+        for i in range(self.__height):
+            rect += str(self.print_symbol) * self.__width
+            if i != self.__height - 1:
+                rect += "\n"
+        return rect
+
+    def __repr__(self):
+        return (f"Rectangle({self.__width}, {self.__height})")
+
+    def __print__(self):
+        print(str(self))
+
+    def __del__(self):
+        Rectangle.number_of_instances -= 1
+        print(f"Bye rectangle...")
