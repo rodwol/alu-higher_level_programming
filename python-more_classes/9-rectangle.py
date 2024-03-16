@@ -52,6 +52,10 @@ class Rectangle:
         else:
             return (2 * (self.__width + self.__height))
 
+    @classmethod
+    def square(cls, size=0):
+        return cls(width=size, height=size)
+
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
@@ -84,7 +88,3 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
-
-    @classmethod
-    def square(cls, size=0):
-        return (cls(size, size))
