@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-# a class Rectangle that defines a rectangle
+#a class Rectangle that defines a rectangle
+"""This module provides functionality related to rectangle"""
+
 
 class Rectangle:
-    """Represent a rectangle."""
+    """
+    This class represents a rectangle.
 
+    Attributes:
+      __width:width of the rectangle
+      __height:height of the rectangle
+    """
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle.
-
-        Args:
-            width (int): The width of the new rectangle.
-            height (int): The height of the new rectangle.
-        """
         self.width = width
         self.height = height
 
