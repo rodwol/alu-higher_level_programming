@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#a class Rectangle that defines a rectangle
+# a class Rectangle that defines a rectangle
 """This module provides functionality related to rectangle"""
 
 
