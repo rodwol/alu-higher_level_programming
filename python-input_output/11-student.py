@@ -29,13 +29,13 @@ class Student:
         """
         Returns a dictionary representation of the Student instance.
 
-        Args:
-            dict: A dictionary containing the specified or all attributes of the student.
         """
         if attrs is None:
             return self.__dict__
         else:
-            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+            return {
+                    attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)
+                    }
 
     def reload_from_json(self, json):
         """
