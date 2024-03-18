@@ -1,0 +1,12 @@
+# Input-output pairs for testing the integer_validator method of BaseGeometry
+
+# Valid inputs
+my_int: 12
+width: 89
+
+# Invalid inputs
+# Test cases for TypeError
+name: "John"
+# Test cases for ValueError
+age: 0
+distance: -4
