@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-# takes in a URL, sends a request to the URL
-# displays the value of the X-Request-Id variable
-"""
-Sends a request to the specified URL and displays the value of the
-X-Request-Id variable found in the header of the response.
-"""
-
-import sys
+# fetches https://alu-intranet.hbtn.io/status
 import urllib.request
 
+url = 'https://alu-intranet.hbtn.io/status'
 
-if __name__ == "__main__":
-    with urllib.request.urlopen(sys.argv[1]) as response:
-        x_request_id = response.headers.get("X-Request-Id")
-    print(x_request_id)
+request = urllib.request.Request(url)
+with urllib.request.urlopen(request) as response:
+    html = response.read()
+print("Body response:")
+print("\t- type: {}".format(html.__class__))
+print("\t- content: {}".format(html))
+print("\t- utf8 content: {}".format(html.decode('ascii')))
+print("Body response:")
+print("\t- type:", type(html))
+print("\t- content:", html)
+print("\t- utf8 content:", html.decode('utf-8'))
