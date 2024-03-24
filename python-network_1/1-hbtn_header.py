@@ -5,7 +5,7 @@ Fetches the status of a given URL and prints the X-Request-Id header.
 Usage: python3 script_name.py <URL>
 """
 
-import urllib
+import urllib request
 import sys
 
 
