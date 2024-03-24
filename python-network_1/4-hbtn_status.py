@@ -14,11 +14,11 @@ if __name__ == '__main__':
         url = "https://" + url
 
     # Send GET request to the URL
-    response = requests.get(url)
+    res = requests.get(url)
 
     # Print information about the response
     print("Body response:")
-    print("\t- type:", (type(response.text)))
+    print("\t- type: {}".format(type(res.text)))
     # Type of the response content
-    print("\t- content:", (response.text))
+    print("\t- content: {}".format(res.text))
     # Content of the response
