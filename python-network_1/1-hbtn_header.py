@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 # fetches https://alu-intranet.hbtn.io/status
-import urllib.request
+import urllib
+import sys
 
-url = 'https://alu-intranet.hbtn.io/status'
 
-request = urllib.request.Request(url)
-with urllib.request.urlopen(request) as response:
-    html = response.read()
-print("Body response:")
-print("\t- type:", type(html))
-print("\t- content:", html)
-print("\t- utf8 content:", html.decode('utf-8'))
+if __name__ == '__main__':
+    with urllib.request.urlopen(sys.argv[1]) as response:
+        x_request_id = response.getheader('X-Request-Id')
+
+    print(x_request_id)
