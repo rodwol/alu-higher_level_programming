@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 """
-Script: github_user_id.py
-takes GitHub credentials (username and personal access token)
+Takes GitHub credentials (username and personal access token)
 uses Basic Authentication with the GitHub API to display the user's id
-utilizes the requests and sys packages
-
+utilizes the requests and sys packages.
 """
 
 import requests
@@ -15,9 +13,9 @@ if __name__ == '__main__':
     url = "https://api.github.com/user"
     username = sys.argv[1]
     password = sys.argv[2]
-    auth = (username, password)
+    authentication = (username, password)
 
-    response = requests.get(url, auth=auth)
+    response = requests.get(url, authentication=authentication)
 
     if response.status_code == 200:
         user_data = response.json()
