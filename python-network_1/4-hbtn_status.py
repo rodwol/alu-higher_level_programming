@@ -4,11 +4,8 @@ fetches https://alu-intranet.hbtn.io/status
 """
 import requests
 
-url = 'https://alu-intranet.hbtn.io/status'
-response = requests.get(url)
 
-if response.status_code == 200:
-    data = response.json()
-    print("Body response:")
-    print("\t- type:", type(data))
-    print("\t- content:", data)
+if __name__ == "__main__":
+    r = requests.get('https://intranet.hbtn.io/status')
+    t = r.text
+    print('Body response:\n\t- type: {}\n\t- content: {}'.format(type(t), t))
