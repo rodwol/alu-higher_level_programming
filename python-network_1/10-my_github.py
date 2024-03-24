@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     if response.status_code == 200:
         user_data = response.json()
-        return user_data['id']
+        print("User ID:", user_data['id']
     else:
         print("Error: Unable to retrieve user id")
         return None
