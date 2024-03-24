@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-"""
-Script to fetch https://alu-intranet.hbtn.io/status using urllib package
-
-"""
 import urllib.request
 
 
