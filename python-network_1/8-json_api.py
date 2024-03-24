@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Script to send a POST request to http://0.0.0.0:5000/search_user with a letter as a parameter.
+Script to send a POST request to http://0.0.0.0:5000/search_user
+with a letter as a parameter.
+
 Uses the requests and sys packages.
 """
 import requests
