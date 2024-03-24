@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-# Script to use the GitHub API to display the user id using Basic Authentication with a personal access token
-# and uses the requests and sys packages
 """
 Script: github_user_id.py
-Description: This script takes GitHub credentials (username and personal access token) as input and 
-             uses Basic Authentication with the GitHub API to display the user's id. It utilizes only 
-             the requests and sys packages.
+takes GitHub credentials (username and personal access token)
+uses Basic Authentication with the GitHub API to display the user's id
+utilizes the requests and sys packages
+
 """
 
 import requests
