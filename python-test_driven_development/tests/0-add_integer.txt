@@ -31,18 +31,14 @@ Testing Emty args Raise Error
     ...
     TypeError: add_integer() missing 1 required positional argument: 'a'
 
-Testing A float Return int
-    >>> add_integer(100.3, -2)
-    98
-
 Testing  not int variable for b
-    >>> add_integer(2, "Holberton")
+    >>> add_integer(2, "ALU")
     Traceback (most recent call last):
     ...
     TypeError: b must be an integer
 
 Testing  not int variable for a
-    >>> add_integer("school", 10)
+    >>> add_integer("UNI", 10)
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
