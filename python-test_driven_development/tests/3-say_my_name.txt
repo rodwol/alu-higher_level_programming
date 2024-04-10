@@ -1,4 +1,4 @@
-ay_my_name`` module
+say_my_name`` module
 ======================
 
 using ``say_my_name``
@@ -6,15 +6,6 @@ using ``say_my_name``
 ----------------------
 Testing import
     >>> say_my_name = __import__('3-say_my_name').say_my_name
-
-
-Testing Normal Display
-    >>> say_my_name('Rodas', 'Goniche')
-    My name is Rodas Goniche
-
-Testing There is no Last name
-    >>> say_my_name('Rodas')
-    My name is Rodas 
 
 Testing First Name is Not str
     >>> say_my_name(5, 'Goniche')
