@@ -4,8 +4,12 @@ say_my_name`` module
 using ``say_my_name``
 
 ----------------------
-Testing import
+``say_my_name(...)``` returns the full name.
+---------------------
+
     >>> say_my_name = __import__('3-say_my_name').say_my_name
+        >>> say_my_name("John", "Smith")
+        My name is John Smith
 
 Testing First Name is Not str
     >>> say_my_name(5, 'Goniche')
