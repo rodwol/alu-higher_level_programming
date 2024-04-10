@@ -35,5 +35,7 @@ class TestMaxInteger(unittest.TestCase):
         """tests with float"""
         self.assertEqual(max_integer([1, 2, 3.3]), 3.3)
 
+    def test_one_number_in_a_list(self):
+        self.assertEqual(max_integer([1]), 1)
 if __name__ == "__main__":
     unittest.main()
