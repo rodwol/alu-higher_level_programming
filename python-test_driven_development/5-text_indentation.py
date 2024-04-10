@@ -18,18 +18,24 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    trigger_chars = ['.', '?', ':']
 
-    Char = ['.', '?', ':']
-    lines = ""
-    current_line = ""
-
+    # Iterate through the text
     for char in text:
-        current_line += char
-        if char in Char:
-            lines += current_line.strip()
-            current_line = ""
-
-    if current_line:
-        lines += current_line.strip() + "\n"
-
-    print(lines)
+        print(char, end='')
+        # Check if the character triggers a new line
+        if char in trigger_chars:
+            print("\n")
+            # Skip the next two lines if they are newline characters
+            while text[text.index(char)+1] == '\n':
+                print("\n", end='')
+                char = text[text.index(char)+1]
+            # Skip the next two lines if they are spaces
+            while text[text.index(char)+1] == ' ':
+                char = text[text.index(char)+1]
+        # If the character is a newline, ensure two newlines are added
+        elif char == '\n':
+            print("\n", end='')
+            if text[text.index(char)+1] == '\n':
+                print("\n", end='')
+                char = text[text.index(char)+1]
