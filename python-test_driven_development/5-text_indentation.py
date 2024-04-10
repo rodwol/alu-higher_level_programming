@@ -26,8 +26,10 @@ def text_indentation(text):
     for char in text:
         current_line += char
         if char in Char:
-            lines += current_line.strip() + "\n\n"
+            lines += current_line.strip()
             current_line = ""
 
     if current_line:
         lines += current_line.strip() + "\n"
+
+    print(lines)
