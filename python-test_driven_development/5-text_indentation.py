@@ -31,5 +31,3 @@ def text_indentation(text):
 
     if current_line:
         lines += current_line.strip() + "\n"
-
-    print(lines)

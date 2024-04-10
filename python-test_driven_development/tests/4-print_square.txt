@@ -35,3 +35,8 @@ Testing missing 1 arg
     Traceback (most recent call last):
     ...
     TypeError: print_square() missing 1 required positional argument: 'size'
+
+without parameters
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'

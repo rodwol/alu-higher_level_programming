@@ -16,9 +16,9 @@ def matrix_divided(matrix, div):
     Returns:
         matrix: a new matrix divided by div
     """
-    if not all(isinstance(row, list) for row in matrix) or\
-        not all(isinstance(num, (int, float)) for row in matrix for num in row):
-        raise TypeError("matrix must be a matrix \
+if not all(isinstance(row, list) for row in matrix) or \
+   not all(isinstance(num, (int, float)) for row in matrix for num in row):
+    raise TypeError("matrix must be a matrix \
 (list of lists) of integers/floats")
 
     if not isinstance(matrix, list):
