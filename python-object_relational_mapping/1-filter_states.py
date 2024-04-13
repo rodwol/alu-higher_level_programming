@@ -12,7 +12,7 @@ import sys
 import MySQLdb
 
 
-def states_starting_with_n(username, password, database):
+if __name__ == '__main__':
     db = MySQLdb.connect(host="localhost",
                          username=sys.argv[1],
                          password=sys.argv[2],
@@ -27,6 +27,3 @@ def states_starting_with_n(username, password, database):
 
     cursor.close()
     db.close()
-
-if __name__ == "__main__":
-    states_starting_with_n(username, password, database)
