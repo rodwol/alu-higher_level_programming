@@ -29,3 +29,4 @@ def states_starting_with_n(username, password, database):
     db.close()
 
 if __name__ == "__main__":
+    states_starting_with_n(username, password, database)

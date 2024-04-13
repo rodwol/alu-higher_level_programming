@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 """
-Module: lists all states from the database hbtn_0e_0_usa
+Module: This script lists all states from the database hbtn_0e_0_usa.
 
+This script connects to a MySQL database and retrieves the list of states from the 'states' table.
+It then prints out the retrieved data.
+
+Usage:
+    python3 script_name.py <username> <password> <database_name>
 """
 import sys
 import MySQLdb
@@ -23,5 +28,4 @@ def list_states(username, password, database):
     db.close()
 
 if __name__ == "__main__":
-
-
+    list_states(username, password, database)
