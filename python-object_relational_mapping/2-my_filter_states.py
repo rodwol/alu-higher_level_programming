@@ -18,7 +18,7 @@ import sys
 import MySQLdb
 
 
-def search_states(username, password, database, state_name):
+if __name__ == '__main__':
     db = MySQLdb.connect(host='localhost',
                          username=sys.argv[1],
                          password=sys.argv[2],
@@ -26,6 +26,7 @@ def search_states(username, password, database, state_name):
                          port=3306)
 
     cursor = db.cursor()
+    states_name=sys.argv[4]
     sql_query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cursor.execute(sql_query, (state_name,))
 
@@ -35,7 +36,3 @@ def search_states(username, password, database, state_name):
 
     cursor.close()
     db.close()
-
-if __name__ == "__main__":
-    state_name = sys.argv[4]
-    search_states(username, password, database, state_name)

@@ -12,7 +12,7 @@ import sys
 import MySQLdb
 
 
-def list_states(username, password, database):
+if __name__ == '__main__':
     db = MySQLdb.connect(host="localhost",
                          user=sys.argv[1],
                          password=sys.argv[2],
@@ -26,6 +26,3 @@ def list_states(username, password, database):
         print(i)
 
     db.close()
-
-if __name__ == "__main__":
-    list_states(username, password, database)
