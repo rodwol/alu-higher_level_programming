@@ -23,4 +23,5 @@ def list_states(username, password, database):
     db.close()
 
 if __name__ == "__main__":
-    main()
+
+

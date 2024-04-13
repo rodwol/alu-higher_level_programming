@@ -2,6 +2,11 @@
 """
 Module: lists all states with a name
 Starting with N (upper N) from the database hbtn_0e_0_usa
+
+This script connects to the MySQL server running on localhost using
+the provided username, password, and database name. It then executes
+a query to retrieve all states whose names start with 'N' and
+displays the results sorted by the state id.
 """
 import sys
 import MySQLdb
