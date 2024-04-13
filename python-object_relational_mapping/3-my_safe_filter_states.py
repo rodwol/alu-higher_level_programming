@@ -2,6 +2,15 @@
 """
 Script that takes in arguments and displays all values in the states
 table of hbtn_0e_0_usa where name matches the argument.
+
+This script connects to a MySQL database and retrieves data from the 'states' table
+based on a provided argument. It takes four command-line arguments:
+1. MySQL username
+2. MySQL password
+3. MySQL database name
+4. Name to search for in the 'name' column of the 'states' table
+
+Usage: ./script_name.py <username> <password> <database_name> <name_to_search>
 """
 import MySQLdb
 import sys
