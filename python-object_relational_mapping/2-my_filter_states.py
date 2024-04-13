@@ -3,7 +3,8 @@
 Module: Script to search for states in a MySQL database table.
 
 Usage:
-    ./search_states.py [mysql_username] [mysql_password] [database_name] [state_name]
+    ./search_states.py [mysql_username] [mysql_password]
+     [database_name] [state_name]
 
 Arguments:
     mysql_username: MySQL username
@@ -26,7 +27,8 @@ if __name__ == '__main__':
                          port=3306)
 
     cursor = db.cursor()
-    sql_query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(sys.argv[4])
+    sql_query = "SELECT * FROM states WHERE name = '{}'\
+ORDER BY id ASC".format(sys.argv[4])
     cursor.execute(sql_query)
 
     states = cursor.fetchall()
