@@ -26,9 +26,8 @@ if __name__ == '__main__':
                          port=3306)
 
     cursor = db.cursor()
-    states_name=sys.argv[4]
-    sql_query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(sql_query, (state_name,))
+    sql_query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(sys.argv[4])
+    cursor.execute(sql_query)
 
     states = cursor.fetchall()
     for i in states:

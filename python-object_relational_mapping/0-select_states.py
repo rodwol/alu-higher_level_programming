@@ -2,7 +2,8 @@
 """
 Module: This script lists all states from the database hbtn_0e_0_usa.
 
-This script connects to a MySQL database and retrieves the list of states from the 'states' table.
+This script connects to a MySQL database and retrieves the list
+of states from the 'states' table.
 It then prints out the retrieved data.
 
 Usage:
