@@ -1,39 +1,30 @@
 #!/usr/bin/python3
 """
-Module: Script to search for states in a MySQL database table.
-
-Usage:
-    ./search_states.py [mysql_username] [mysql_password]
-     [database_name] [state_name]
-
-Arguments:
-    mysql_username: MySQL username
-    mysql_password: MySQL password
-    database_name: Name of the database
-    state_name: Name of the state to search for
-
-Example:
-    ./search_states.py root password hbtn_0e_0_usa California
+Write a script that takes in an argument and
+displays all values in the states table of hbtn_0e_0_usa
+where name matches the argument.
 """
 import sys
 import MySQLdb
 
 
 if __name__ == '__main__':
-    db = MySQLdb.connect(host='localhost',
-                         user=sys.argv[1],
-                         passwd=sys.argv[2],
-                         db=sys.argv[3],
-                         port=3306)
-
-    cursor = db.cursor()
-    sql_query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY id"\
-.format(sys.argv[4])
-    cursor.execute(sql_query)
-
-    states = cursor.fetchall()
-    for i in states:
-        print(i)
-
-    cursor.close()
-    db.close()
+    conn = MySQLdb.connect(
+                        host="localhost",
+                        port=3306,
+                        user=sys.argv[1],
+                        passwd=sys.argv[2],
+                        db=sys.argv[3],
+                        charset="utf8"
+                            )
+    cur = conn.cursor()
+    search = sys.argv[4]
+    query = """SELECT * FROM states where name = '{:s}'
+            ORDER by id ASC""".format(search)
+    cur.execute(query)
+    row = cur.fetchall()
+    for r in row:
+        if r[1] == search:
+            print(r)
+    cur.close()
+    conn.close()
