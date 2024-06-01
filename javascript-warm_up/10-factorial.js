@@ -1,13 +1,12 @@
 #!/usr/bin/node
 
-function factorial (n) {
-  if (isNaN(n)) {
-    console.log('1');
+function factorial(n) {
+  if (isNaN(n) || n <= 0) {
     return 1;
   } else {
-    return n * factorial(n - 1);
+    return BigInt(n) * BigInt(factorial(n - 1));
   }
 }
 
 const n = parseInt(process.argv[2]);
-factorial(n);
+console.log(factorial(n));
