@@ -1,3 +1,7 @@
 #!/usr/bin/node
 
-module.exports = class Rectangle {};
+class Rectangle {
+  // Optionally, you could define a constructor and methods here
+}
+
+module.exports = Rectangle;
