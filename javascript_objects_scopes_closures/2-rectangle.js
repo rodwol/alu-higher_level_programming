@@ -3,12 +3,12 @@
 class Rectangle {
   // define a constructor
   constructor (w, h) {
-    if (w <= 0 || h <= 0) {
+    if (typeof width === 'number' && typeof height === 'number' && width > 0 && height > 0) {
       // create an empty object
-      return;
-    }
-    this.width = w;
-    this.height = h;
+	    return;
+    } 
+	    this.width = w;
+	    this.height = h;
   }
 }
 
