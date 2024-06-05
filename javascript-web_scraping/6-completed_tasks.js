@@ -2,34 +2,24 @@
 
 const request = require('request');
 
-// Get the API URL from command-line arguments
-const url = process.argv[2];
-
-// Make a GET request to the API URL
-request.get(url, function (error, response, body) {
-  if (error) {
-    console.error('Error:', error);
-  } else if (response.statusCode !== 200) {
-    console.error('Status code:', response.statusCode);
+request(process.argv[2], function (err, _res, body) {
+  if (err) {
+    console.log(err);
   } else {
-    const todos = JSON.parse(body);
-    const completedTasksByUser = {};
+    const completedTasksByUsers = {};
+    body = JSON.parse(body);
 
-    // Iterate through each todo item
-    todos.forEach(todo => {
-      if (todo.completed) {
-        if (!completedTasksByUser[todo.userId]) {
-          completedTasksByUser[todo.userId] = 0;
-        }
-        completedTasksByUser[todo.userId]++;
-      }
-    });
+    for (let i = 0; i < body.length; ++i) {
+      const userId = body[i].userId;
+      const completed = body[i].completed;
 
-    // Print users with completed tasks
-    for (const userId in completedTasksByUser) {
-      if (Object.prototype.hasOwnProperty.call(completedTasksByUser, userId)) {
-        console.log(`'${userId}': ${completedTasksByUser[userId]}`);
+      if (completed && !completedTasksByUsers[userId]) {
+        completedTasksByUsers[userId] = 0;
       }
+
+      if (completed) ++completedTasksByUsers[userId];
     }
+
+    console.log(completedTasksByUsers);
   }
 });
