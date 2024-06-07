@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-/*const request = require('request');
+/* const request = require('request');
 
 // Get the API URL from command-line arguments
 const url = process.argv[2];
